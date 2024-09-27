@@ -1,0 +1,15 @@
+{
+    "app": {
+        "title": "Insulin Dose Calculator"
+    },
+    "calculator": {
+        "carbsLabel": "Carbohydrate Amount (g):",
+        "icrLabel": "Insulin-Carbohydrate Ratio (1:X):",
+        "currentGlucoseLabel": "Current Glucose Level (mg/dL):",
+        "targetGlucoseLabel": "Target Glucose Level (mg/dL):",
+        "isfLabel": "Insulin Sensitivity Factor (mg/dL per unit):",
+        "calculateButton": "Calculate Total Dose",
+        "resultTitle": "Total Insulin Dose: {{total}} units",
+        "resultDetail": "({{carbsInsulin}} units for carbohydrates + {{correctionInsulin}} units for correction)"
+    }
+}

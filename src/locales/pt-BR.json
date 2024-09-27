@@ -1,0 +1,15 @@
+{
+    "app": {
+        "title": "Calculadora de Dose de Insulina"
+    },
+    "calculator": {
+        "carbsLabel": "Quantidade de Carboidratos (g):",
+        "icrLabel": "Razão Insulina-Carboidrato (1:X):",
+        "currentGlucoseLabel": "Glicemia Atual (mg/dL):",
+        "targetGlucoseLabel": "Glicemia Alvo (mg/dL):",
+        "isfLabel": "Fator de Sensibilidade à Insulina (mg/dL por unidade):",
+        "calculateButton": "Calcular Dose Total",
+        "resultTitle": "Dose Total de Insulina: {{total}} unidades",
+        "resultDetail": "({{carbsInsulin}} unidades para carboidratos + {{correctionInsulin}} unidades para correção)"
+    }
+}
