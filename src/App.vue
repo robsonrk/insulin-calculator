@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <h1>{{ $t('app.title') }}</h1>
+  <div class="min-h-screen bg-gray-100 flex flex-col items-center p-4">
+    <h1 class="text-2xl font-bold mb-4">{{ $t('app.title') }}</h1>
     <LanguageSwitcher />
     <InsulinCalculator />
   </div>
@@ -21,11 +21,5 @@ export default defineComponent({
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
-  padding: 2rem;
-  background-color: #f5f5f5;
-  min-height: 100vh;
-}
+/* Remova estilos anteriores se existirem */
 </style>

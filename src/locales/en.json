@@ -9,7 +9,7 @@
         "targetGlucoseLabel": "Target Glucose Level (mg/dL):",
         "isfLabel": "Insulin Sensitivity Factor (mg/dL per unit):",
         "calculateButton": "Calculate Total Dose",
-        "resultTitle": "Total Insulin Dose: {{total}} units",
-        "resultDetail": "({{carbsInsulin}} units for carbohydrates + {{correctionInsulin}} units for correction)"
+        "resultTitle": "Total Insulin Dose: {total} units",
+        "resultDetail": "({carbsInsulin} units for carbohydrates + {correctionInsulin} units for correction)"
     }
 }

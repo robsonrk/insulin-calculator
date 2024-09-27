@@ -1,8 +1,11 @@
 <!-- src/components/LanguageSwitcher.vue -->
 <template>
-    <div class="language-switcher">
-        <button v-for="(language, key) in languages" :key="key" @click="switchLanguage(key)"
-            :class="{ active: currentLocale === key }">
+    <div class="flex space-x-2 mb-4">
+        <button v-for="(language, key) in languages" :key="key" @click="switchLanguage(key)" :class="[
+            'px-4 py-2 rounded',
+            currentLocale === key ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700',
+            'hover:bg-blue-400 hover:text-white transition'
+        ]">
             {{ language }}
         </button>
     </div>
@@ -19,8 +22,8 @@ export default defineComponent({
 
         const languages = {
             'pt-BR': 'Português (BR)',
-            ja: '日本語',
             en: 'English',
+            ja: '日本語',
         };
 
         const currentLocale = computed(() => locale.value);
@@ -39,25 +42,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.language-switcher {
-    margin-bottom: 1rem;
-}
-
-button {
-    margin: 0 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: #42b983;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button.active {
-    background-color: #369870;
-}
-
-button:hover {
-    background-color: #369870;
-}
+/* Estilos adicionais se necessário */
 </style>

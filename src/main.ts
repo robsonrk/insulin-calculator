@@ -1,21 +1,21 @@
-// src/main.ts
 import { createApp } from 'vue';
 import App from './App.vue';
 import { createI18n } from 'vue-i18n';
+import './index.css'; // Adicione esta linha
 
 // Importação das traduções
 import en from './locales/en.json';
 import ja from './locales/ja.json';
-import ptBR from './locales/pt-BR.json'; // Adicione esta linha
+import ptBR from './locales/pt-BR.json';
 
 // Configuração do i18n
 const i18n = createI18n({
-    locale: 'pt-BR', // Defina o idioma padrão conforme necessário
+    locale: 'ja', // Defina o idioma padrão conforme necessário
     fallbackLocale: 'en',
     messages: {
         en,
         ja,
-        'pt-BR': ptBR // Adicione esta linha
+        'pt-BR': ptBR
     }
 });
 

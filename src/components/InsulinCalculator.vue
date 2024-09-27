@@ -1,39 +1,46 @@
 <template>
-    <div class="calculator">
-        <form @submit.prevent="calculateInsulin">
-            <div class="form-group">
-                <label :for="'carbs'">{{ $t('calculator.carbsLabel') }}</label>
-                <input type="number" id="carbs" v-model.number="carbs" required min="0" />
+    <div class="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
+        <form @submit.prevent="calculateInsulin" class="space-y-4">
+            <div class="flex flex-col">
+                <label :for="'carbs'" class="font-semibold">{{ $t('calculator.carbsLabel') }}</label>
+                <input type="number" id="carbs" v-model.number="carbs" required min="0"
+                    class="mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="form-group">
-                <label :for="'icr'">{{ $t('calculator.icrLabel') }}</label>
-                <input type="number" id="icr" v-model.number="icr" required min="1" />
+            <div class="flex flex-col">
+                <label :for="'icr'" class="font-semibold">{{ $t('calculator.icrLabel') }}</label>
+                <input type="number" id="icr" v-model.number="icr" required min="1"
+                    class="mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="form-group">
-                <label :for="'currentGlucose'">{{ $t('calculator.currentGlucoseLabel') }}</label>
-                <input type="number" id="currentGlucose" v-model.number="currentGlucose" required min="0" />
+            <div class="flex flex-col">
+                <label :for="'currentGlucose'" class="font-semibold">{{ $t('calculator.currentGlucoseLabel') }}</label>
+                <input type="number" id="currentGlucose" v-model.number="currentGlucose" required min="0"
+                    class="mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="form-group">
-                <label :for="'targetGlucose'">{{ $t('calculator.targetGlucoseLabel') }}</label>
-                <input type="number" id="targetGlucose" v-model.number="targetGlucose" required min="0" />
+            <div class="flex flex-col">
+                <label :for="'targetGlucose'" class="font-semibold">{{ $t('calculator.targetGlucoseLabel') }}</label>
+                <input type="number" id="targetGlucose" v-model.number="targetGlucose" required min="0"
+                    class="mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div class="form-group">
-                <label :for="'isf'">{{ $t('calculator.isfLabel') }}</label>
-                <input type="number" id="isf" v-model.number="isf" required min="1" />
+            <div class="flex flex-col">
+                <label :for="'isf'" class="font-semibold">{{ $t('calculator.isfLabel') }}</label>
+                <input type="number" id="isf" v-model.number="isf" required min="1"
+                    class="mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <button type="submit">{{ $t('calculator.calculateButton') }}</button>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition">
+                {{ $t('calculator.calculateButton') }}
+            </button>
         </form>
 
-        <div v-if="totalInsulin !== null" class="result">
-            <h2>{{ $t('calculator.resultTitle', { total: totalInsulin }) }}</h2>
-            <p>
-                {{ $t('calculator.resultDetail', { carbsInsulin: insulinForCarbs, correctionInsulin }) }}
-            </p>
+        <div v-if="totalInsulin !== null" class="mt-6 bg-blue-100 p-4 rounded">
+            <h2 class="text-xl font-bold">{{ $t('calculator.resultTitle', { total: totalInsulin }) }}</h2>
+            <p class="mt-2">{{ $t('calculator.resultDetail', {
+                carbsInsulin: insulinForCarbs, correctionInsulin:
+                correctionInsulin }) }}</p>
         </div>
     </div>
 </template>
@@ -86,52 +93,3 @@ export default defineComponent({
     },
 });
 </script>
-
-<style scoped>
-.calculator {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    max-width: 500px;
-    margin: 0 auto;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 1rem;
-    text-align: left;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-input {
-    width: 100%;
-    padding: 0.5rem;
-    box-sizing: border-box;
-}
-
-button {
-    padding: 0.75rem 1.5rem;
-    background-color: #42b983;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #369870;
-}
-
-.result {
-    margin-top: 2rem;
-    padding: 1rem;
-    background-color: #e6f7ff;
-    border: 1px solid #91d5ff;
-    border-radius: 4px;
-}
-</style>

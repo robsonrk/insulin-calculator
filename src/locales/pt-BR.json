@@ -9,7 +9,7 @@
         "targetGlucoseLabel": "Glicemia Alvo (mg/dL):",
         "isfLabel": "Fator de Sensibilidade à Insulina (mg/dL por unidade):",
         "calculateButton": "Calcular Dose Total",
-        "resultTitle": "Dose Total de Insulina: {{total}} unidades",
-        "resultDetail": "({{carbsInsulin}} unidades para carboidratos + {{correctionInsulin}} unidades para correção)"
+        "resultTitle": "Dose Total de Insulina: {total} unidades",
+        "resultDetail": "({carbsInsulin} unidades para carboidratos + {correctionInsulin} unidades para correção)"
     }
 }
