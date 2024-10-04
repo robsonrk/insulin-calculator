@@ -71,9 +71,9 @@ import { defineComponent, ref } from 'vue';
 export default defineComponent({
     name: 'InsulinCalculator',
     setup() {
-        const carbs = ref<number>(80);
-        const icr = ref<number>(0.5); // Exemplo: 1 unidade para cada 10g
-        const currentGlucose = ref<number>(191);
+        const carbs = ref<number>(0);
+        const icr = ref<number>(0); // Exemplo: 1 unidade para cada 10g
+        const currentGlucose = ref<number>(0);
         const targetGlucose = ref<number>(130);
         const isf = ref<number>(100); // Exemplo: 1 unidade reduz 50 mg/dL
         const rounding = ref<string>('floor');
