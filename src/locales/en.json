@@ -10,6 +10,9 @@
         "isfLabel": "Insulin Sensitivity Factor (mg/dL per unit):",
         "calculateButton": "Calculate Total Dose",
         "resultTitle": "Total Insulin Dose: {total} units",
-        "resultDetail": "({carbsInsulin} units for carbohydrates + {correctionInsulin} units for correction)"
+        "resultDetail": "({carbsInsulin} units for carbohydrates + {correctionInsulin} units for correction)",
+        "roundingLabel": "Rounding",
+        "floorOption": "Floor",
+        "roundOption": "Round"
     }
 }

@@ -38,6 +38,17 @@
                     class="mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
 
+            <!-- Radios Para selecionar floor() ou round() -->
+            <div class="flex flex-col">
+                <label class="font-semibold">{{ $t('calculator.roundingLabel') }}</label>
+                <div class="flex items-center mt-1">
+                    <input type="radio" id="floor" name="rounding" value="floor" v-model="rounding" class="mr-1">
+                    <label for="floor" class="mr-4">{{ $t('calculator.floorOption') }}</label>
+                    <input type="radio" id="round" name="rounding" value="round" v-model="rounding" class="mr-1">
+                    <label for="round">{{ $t('calculator.roundOption') }}</label>
+                </div>
+            </div>
+
             <!-- Botão de Calcular -->
             <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition">
                 {{ $t('calculator.calculateButton') }}
@@ -48,7 +59,7 @@
         <div v-if="totalInsulin !== null" class="mt-6 bg-blue-100 p-4 rounded">
             <h2 class="text-xl font-bold">{{ $t('calculator.resultTitle', { total: totalInsulin }) }}</h2>
             <p class="mt-2">{{ $t('calculator.resultDetail', {
-                carbsInsulin: (insulinForCarbs/10).toFixed(2), correctionInsulin:
+                carbsInsulin: (insulinForCarbs).toFixed(2), correctionInsulin:
                 correctionInsulin.toFixed(2) }) }}</p>
         </div>
     </div>
@@ -60,11 +71,12 @@ import { defineComponent, ref } from 'vue';
 export default defineComponent({
     name: 'InsulinCalculator',
     setup() {
-        const carbs = ref<number>(55.5);
-        const icr = ref<number>(1.1); // Exemplo: 1 unidade para cada 10g
-        const currentGlucose = ref<number>(139);
+        const carbs = ref<number>(80);
+        const icr = ref<number>(0.5); // Exemplo: 1 unidade para cada 10g
+        const currentGlucose = ref<number>(191);
         const targetGlucose = ref<number>(130);
         const isf = ref<number>(100); // Exemplo: 1 unidade reduz 50 mg/dL
+        const rounding = ref<string>('floor');
 
         const insulinForCarbs = ref<number>(0);
         const correctionInsulin = ref<number>(0);
@@ -72,7 +84,7 @@ export default defineComponent({
 
         const calculateInsulin = () => {
             // Cálculo para carboidratos
-            insulinForCarbs.value = carbs.value / icr.value;
+            insulinForCarbs.value = (carbs.value / (1/icr.value))/10;
             console.log('insulinForCarbs', insulinForCarbs.value, carbs.value, icr.value);
 
             // Cálculo para correção
@@ -83,8 +95,17 @@ export default defineComponent({
                 correctionInsulin.value = 0;
             }
 
+            console.log('rounding', rounding.value);
             // Dose total arredondada para o inteiro mais próximo
-            totalInsulin.value = Math.round((insulinForCarbs.value / 10) + correctionInsulin.value);
+            switch (rounding.value) {
+                case 'round':
+                    totalInsulin.value = Math.round((insulinForCarbs.value) + correctionInsulin.value);
+                    break;
+                case 'floor':
+                default:
+                    totalInsulin.value = Math.floor((insulinForCarbs.value) + correctionInsulin.value);
+                    break;
+            }
         };
 
         return {
@@ -97,6 +118,7 @@ export default defineComponent({
             correctionInsulin,
             totalInsulin,
             calculateInsulin,
+            rounding,
         };
     },
 });

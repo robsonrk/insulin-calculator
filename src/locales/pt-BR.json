@@ -10,6 +10,9 @@
         "isfLabel": "Fator de Sensibilidade à Insulina (mg/dL por unidade):",
         "calculateButton": "Calcular Dose Total",
         "resultTitle": "Dose Total de Insulina: {total} unidades",
-        "resultDetail": "(p/ carboidratos: {carbsInsulin} unid. + p/ correção: {correctionInsulin} unid. )"
+        "resultDetail": "(p/ carboidratos: {carbsInsulin} unid. + p/ correção: {correctionInsulin} unid. )",
+        "roundingLabel": "Arredondamento",
+        "floorOption": "Arredondar para baixo",
+        "roundOption": "Arredondar para cima"
     }
 }
