@@ -7,7 +7,7 @@
         "icrLabel": "インスリン-炭水化物比率 (1:X):",
         "currentGlucoseLabel": "現在の血糖値 (mg/dL):",
         "targetGlucoseLabel": "目標血糖値 (mg/dL):",
-        "isfLabel": "インスリン感受性係数 (mg/dL 単位あたり):",
+        "isfLabel": "インスリン効果値 (mg/dL 単位あたり):",
         "calculateButton": "総投与量を計算",
         "resultTitle": "総インスリン投与量: {total} 単位",
         "resultDetail": "（炭水化物用 {carbsInsulin} 単位 + 補正用 {correctionInsulin} 単位）"

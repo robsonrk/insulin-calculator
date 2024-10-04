@@ -60,9 +60,9 @@ import { defineComponent, ref } from 'vue';
 export default defineComponent({
     name: 'InsulinCalculator',
     setup() {
-        const carbs = ref<number>(0);
+        const carbs = ref<number>(55.5);
         const icr = ref<number>(1.1); // Exemplo: 1 unidade para cada 10g
-        const currentGlucose = ref<number>(0);
+        const currentGlucose = ref<number>(139);
         const targetGlucose = ref<number>(130);
         const isf = ref<number>(100); // Exemplo: 1 unidade reduz 50 mg/dL
 
@@ -72,12 +72,13 @@ export default defineComponent({
 
         const calculateInsulin = () => {
             // Cálculo para carboidratos
-            insulinForCarbs.value = carbs.value / (1 / icr.value);
+            insulinForCarbs.value = carbs.value / icr.value;
+            console.log('insulinForCarbs', insulinForCarbs.value, carbs.value, icr.value);
 
             // Cálculo para correção
             const glucoseDifference = currentGlucose.value - targetGlucose.value;
             if (glucoseDifference > 0) {
-                correctionInsulin.value = (glucoseDifference / isf.value) / 10;
+                correctionInsulin.value = (glucoseDifference / isf.value);
             } else {
                 correctionInsulin.value = 0;
             }
