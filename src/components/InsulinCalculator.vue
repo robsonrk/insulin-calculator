@@ -12,7 +12,7 @@
             <!-- Razão Insulina-Carboidrato -->
             <div class="flex flex-col">
                 <label :for="'icr'" class="font-semibold">{{ $t('calculator.icrLabel') }}</label>
-                <input type="number" id="icr" v-model.number="icr" required min="0.1" step="0.1"
+                <input type="number" id="icr" v-model.number="icr" required min="0.001" step="0.001"
                 class="mt-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
             </div>
@@ -89,22 +89,24 @@ export default defineComponent({
 
             // Cálculo para correção
             const glucoseDifference = currentGlucose.value - targetGlucose.value;
-            if (glucoseDifference > 0) {
-                correctionInsulin.value = (glucoseDifference / isf.value);
-            } else {
-                correctionInsulin.value = 0;
-            }
+
+            correctionInsulin.value = (glucoseDifference / isf.value);
 
             console.log('rounding', rounding.value);
             // Dose total arredondada para o inteiro mais próximo
+            const result = insulinForCarbs.value + correctionInsulin.value
             switch (rounding.value) {
                 case 'round':
-                    totalInsulin.value = Math.round((insulinForCarbs.value) + correctionInsulin.value);
+                    totalInsulin.value = Math.round(result);
                     break;
                 case 'floor':
                 default:
-                    totalInsulin.value = Math.floor((insulinForCarbs.value) + correctionInsulin.value);
+                    totalInsulin.value = Math.floor(result);
                     break;
+            }
+            // avoid total < 0
+            if (totalInsulin.value < 0) {
+                totalInsulin.value = 0;
             }
         };
 
