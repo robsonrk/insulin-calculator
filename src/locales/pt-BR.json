@@ -2,6 +2,27 @@
     "app": {
         "title": "Calculadora de Dose de Insulina"
     },
+    "auth": {
+        "login": "Login",
+        "register": "Registro",
+        "email": "Email",
+        "password": "Senha",
+        "emailPlaceholder": "Digite seu email",
+        "passwordPlaceholder": "Digite sua senha",
+        "signIn": "Entrar",
+        "signUp": "Registrar",
+        "noAccount": "Não tem uma conta?",
+        "haveAccount": "Já tem uma conta?",
+        "error": "Erro de autenticação:",
+        "logout": "Sair",
+        "welcome": "Bem-vindo de volta!",
+        "welcomeRegister": "Crie sua conta para começar"
+    },
+    "nav": {
+        "home": "Início",
+        "settings": "Configurações",
+        "inventory": "Estoque"
+    },
     "calculator": {
         "carbsLabel": "Quantidade de Carboidratos (g):",
         "icrLabel": "Razão Insulina-Carboidrato (1:X):",

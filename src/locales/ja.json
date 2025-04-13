@@ -2,16 +2,37 @@
     "app": {
         "title": "インスリン投与量計算機"
     },
+    "auth": {
+        "login": "ログイン",
+        "register": "登録",
+        "email": "メールアドレス",
+        "password": "パスワード",
+        "emailPlaceholder": "メールアドレスを入力",
+        "passwordPlaceholder": "パスワードを入力",
+        "signIn": "ログイン",
+        "signUp": "登録",
+        "noAccount": "アカウントをお持ちでない方",
+        "haveAccount": "既にアカウントをお持ちの方",
+        "error": "認証エラー：",
+        "logout": "ログアウト",
+        "welcome": "おかえりなさい！",
+        "welcomeRegister": "アカウントを作成して始めましょう"
+    },
+    "nav": {
+        "home": "ホーム",
+        "settings": "設定",
+        "inventory": "在庫"
+    },
     "calculator": {
-        "carbsLabel": "炭水化物量 (g):",
-        "icrLabel": "インスリン-炭水化物比率 (1:X):",
-        "currentGlucoseLabel": "現在の血糖値 (mg/dL):",
-        "targetGlucoseLabel": "目標血糖値 (mg/dL):",
-        "isfLabel": "インスリン効果値 (mg/dL 単位あたり):",
-        "calculateButton": "総投与量を計算",
-        "resultTitle": "総インスリン投与量: {total} 単位",
-        "resultDetail": "（炭水化物用 {carbsInsulin} 単位 + 補正用 {correctionInsulin} 単位）",
-        "roundingLabel": "丸め",
+        "carbsLabel": "炭水化物量 (g)：",
+        "icrLabel": "インスリン・カーボ比 (1:X)：",
+        "currentGlucoseLabel": "現在の血糖値 (mg/dL)：",
+        "targetGlucoseLabel": "目標血糖値 (mg/dL)：",
+        "isfLabel": "インスリン効果値 (mg/dL/単位)：",
+        "calculateButton": "合計単位数を計算",
+        "resultTitle": "インスリン合計単位数：{total}単位",
+        "resultDetail": "(炭水化物：{carbsInsulin}単位 + 補正：{correctionInsulin}単位)",
+        "roundingLabel": "丸め方",
         "floorOption": "切り捨て",
         "roundOption": "四捨五入"
     }

@@ -2,6 +2,27 @@
     "app": {
         "title": "Insulin Dose Calculator"
     },
+    "auth": {
+        "login": "Login",
+        "register": "Register",
+        "email": "Email",
+        "password": "Password",
+        "emailPlaceholder": "Enter your email",
+        "passwordPlaceholder": "Enter your password",
+        "signIn": "Sign In",
+        "signUp": "Sign Up",
+        "noAccount": "Don't have an account?",
+        "haveAccount": "Already have an account?",
+        "error": "Authentication error:",
+        "logout": "Logout",
+        "welcome": "Welcome back!",
+        "welcomeRegister": "Create your account to get started"
+    },
+    "nav": {
+        "home": "Home",
+        "settings": "Settings",
+        "inventory": "Inventory"
+    },
     "calculator": {
         "carbsLabel": "Carbohydrate Amount (g):",
         "icrLabel": "Insulin-Carbohydrate Ratio (1:X):",
