@@ -24,16 +24,92 @@
         "inventory": "在庫"
     },
     "calculator": {
-        "carbsLabel": "炭水化物量 (g)：",
-        "icrLabel": "インスリン・カーボ比 (1:X)：",
-        "currentGlucoseLabel": "現在の血糖値 (mg/dL)：",
-        "targetGlucoseLabel": "目標血糖値 (mg/dL)：",
-        "isfLabel": "インスリン効果値 (mg/dL/単位)：",
-        "calculateButton": "合計単位数を計算",
-        "resultTitle": "インスリン合計単位数：{total}単位",
-        "resultDetail": "(炭水化物：{carbsInsulin}単位 + 補正：{correctionInsulin}単位)",
-        "roundingLabel": "丸め方",
+        "carbsLabel": "炭水化物量 (g):",
+        "calculateButton": "総投与量を計算",
+        "currentGlucoseLabel": "現在の血糖値 (mg/dL):",
+        "icrLabel": "インスリン-炭水化物比率 (1:X):",
+        "icrNormal": "通常",
+        "icrMorning": "朝",
+        "icrMissing": "インスリン-炭水化物比率を設定してください",
+        "isfLabel": "インスリン効果値 (mg/dL 単位あたり):",
+        "resultTitle": "総インスリン投与量: {total} 単位",
+        "resultDetail": "（炭水化物用 {carbsInsulin} 単位 + 補正用 {correctionInsulin} 単位）",
+        "targetGlucoseLabel": "目標血糖値 (mg/dL):",
+        "roundingLabel": "丸め",
         "floorOption": "切り捨て",
-        "roundOption": "四捨五入"
+        "roundOption": "四捨五入",
+        "lowGlucoseWarning": "注意：血糖値が非常に低くなっています！",
+        "historyTitle": "計算履歴",
+        "viewHistory": "計算履歴を表示",
+        "calculationDetails": "計算の詳細",
+        "emptyHistory": "計算履歴がありません",
+        "emptyHistoryDescription": "計算機を使用すると、ここに計算履歴が表示されます。"
+    },
+    "inventory": {
+        "addProduct": "製品を追加",
+        "editProduct": "製品を編集",
+        "name": "名前",
+        "quantity": "数量",
+        "unit": "単位",
+        "category": "カテゴリー",
+        "tabs": {
+            "products": "製品",
+            "input": "入力",
+            "summary": "概要"
+        },
+        "products": {
+            "title": "製品管理",
+            "add": "新規製品",
+            "edit": "製品を編集",
+            "name": "名前",
+            "nameHint": "入力フィールドに表示される名前",
+            "unit": "単位",
+            "unitHint": "測定単位（例：個、kg、ml）",
+            "currentQuantity": "現在の数量",
+            "confirmDelete": "この製品を削除してもよろしいですか？"
+        },
+        "input": {
+            "title": "在庫入力",
+            "registrationDate": "登録日",
+            "register": "入力を登録",
+            "noEntries": "少なくとも1つの数量を追加してください",
+            "success": "入力が正常に登録されました！",
+            "error": "入力の登録中にエラーが発生しました"
+        },
+        "summary": {
+            "title": "概要",
+            "noBatches": "入力記録が見つかりません",
+            "previous": "前回の入力",
+            "products": "製品"
+        },
+        "history": {
+            "title": "入力履歴",
+            "empty": "まだ入力が登録されていません",
+            "items": "項目",
+            "deleteConfirmTitle": "入力を削除",
+            "deleteConfirmMessage": "この入力を削除してもよろしいですか？この操作は元に戻せません。"
+        }
+    },
+    "settings": {
+        "preferences": "設定",
+        "language": "言語",
+        "theme": "テーマ",
+        "lightTheme": "ライト",
+        "darkTheme": "ダーク",
+        "notifications": "通知",
+        "insulinSettings": "インスリン設定"
+    },
+    "common": {
+        "cancel": "キャンセル",
+        "save": "保存",
+        "add": "追加",
+        "edit": "編集",
+        "delete": "削除",
+        "actions": "操作",
+        "days": "日",
+        "status": "状態",
+        "active": "有効",
+        "inactive": "無効",
+        "back": "戻る"
     }
 }

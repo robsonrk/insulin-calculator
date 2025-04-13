@@ -6,6 +6,7 @@ const Home = () => import('../views/Home.vue')
 const Login = () => import('../views/Login.vue')
 const Settings = () => import('../views/Settings.vue')
 const Inventory = () => import('../views/Inventory.vue')
+const CalculationHistory = () => import('../components/CalculationHistory.vue')
 
 const routes = [
   {
@@ -29,6 +30,12 @@ const routes = [
     path: '/inventory',
     name: 'Inventory',
     component: Inventory,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/history',
+    name: 'History',
+    component: CalculationHistory,
     meta: { requiresAuth: true }
   }
 ]

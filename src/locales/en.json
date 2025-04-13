@@ -16,7 +16,8 @@
         "error": "Authentication error:",
         "logout": "Logout",
         "welcome": "Welcome back!",
-        "welcomeRegister": "Create your account to get started"
+        "welcomeRegister": "Create your account to get started",
+        "notAuthenticated": "User not authenticated. Please login again."
     },
     "nav": {
         "home": "Home",
@@ -24,16 +25,107 @@
         "inventory": "Inventory"
     },
     "calculator": {
-        "carbsLabel": "Carbohydrate Amount (g):",
-        "icrLabel": "Insulin-Carbohydrate Ratio (1:X):",
-        "currentGlucoseLabel": "Current Glucose Level (mg/dL):",
-        "targetGlucoseLabel": "Target Glucose Level (mg/dL):",
+        "carbsLabel": "Carbohydrates Amount (g):",
+        "icrLabel": "Insulin-to-Carb Ratio (1:X):",
+        "icrNormal": "Normal",
+        "icrMorning": "Morning",
+        "icrMissing": "Set the insulin-to-carb ratio",
+        "currentGlucoseLabel": "Current Blood Glucose (mg/dL):",
+        "targetGlucoseLabel": "Target Blood Glucose (mg/dL):",
         "isfLabel": "Insulin Sensitivity Factor (mg/dL per unit):",
         "calculateButton": "Calculate Total Dose",
         "resultTitle": "Total Insulin Dose: {total} units",
         "resultDetail": "({carbsInsulin} units for carbohydrates + {correctionInsulin} units for correction)",
         "roundingLabel": "Rounding",
-        "floorOption": "Floor",
-        "roundOption": "Round"
+        "floorOption": "Round down",
+        "roundOption": "Round up",
+        "lowGlucoseWarning": "Warning: Blood glucose too low!",
+        "historyTitle": "Calculation History",
+        "viewHistory": "View calculation history",
+        "calculationDetails": "Calculation Details",
+        "emptyHistory": "No calculations found",
+        "emptyHistoryDescription": "Your calculations will appear here when you start using the calculator."
+    },
+    "inventory": {
+        "addProduct": "Add Product",
+        "editProduct": "Edit Product",
+        "name": "Name",
+        "quantity": "Quantity",
+        "unit": "Unit",
+        "category": "Category",
+        "tabs": {
+            "products": "Products",
+            "input": "Input",
+            "summary": "Summary"
+        },
+        "products": {
+            "title": "Product Management",
+            "add": "New Product",
+            "edit": "Edit Product",
+            "name": "Name",
+            "nameHint": "Name that will be displayed in the input field",
+            "unit": "Unit",
+            "unitHint": "Unit of measurement (e.g., pcs, kg, ml)",
+            "currentQuantity": "Current Quantity",
+            "confirmDelete": "Are you sure you want to delete this product?",
+            "createSuccess": "Product created successfully!",
+            "updateSuccess": "Product updated successfully!",
+            "deleteSuccess": "Product deleted successfully!",
+            "statusSuccess": "Product status updated successfully!",
+            "saveError": "Error saving product. Please try again.",
+            "deleteError": "Error deleting product. Please try again.",
+            "statusError": "Error updating product status. Please try again."
+        },
+        "input": {
+            "title": "Inventory Input",
+            "registrationDate": "Registration Date",
+            "register": "Register Input",
+            "noEntries": "Please add at least one quantity",
+            "success": "Input registered successfully!",
+            "error": "Error registering input",
+            "updateSuccess": "Input updated successfully!",
+            "updateError": "Error updating input. Please try again.",
+            "deleteSuccess": "Input deleted successfully!",
+            "deleteError": "Error deleting input. Please try again."
+        },
+        "summary": {
+            "title": "Summary",
+            "noBatches": "No input records found",
+            "previous": "Previous Input",
+            "products": "Products"
+        },
+        "history": {
+            "title": "Input History",
+            "empty": "No inputs registered yet",
+            "items": "items",
+            "deleteConfirmTitle": "Delete Input",
+            "deleteConfirmMessage": "Are you sure you want to delete this input? This action cannot be undone."
+        }
+    },
+    "settings": {
+        "preferences": "Preferences",
+        "language": "Language",
+        "theme": "Theme",
+        "lightTheme": "Light",
+        "darkTheme": "Dark",
+        "notifications": "Notifications",
+        "insulinSettings": "Insulin Settings",
+        "saveSuccess": "Settings saved successfully!",
+        "saveError": "Error saving settings. Please try again."
+    },
+    "common": {
+        "cancel": "Cancel",
+        "save": "Save",
+        "add": "Add",
+        "edit": "Edit",
+        "delete": "Delete",
+        "actions": "Actions",
+        "days": "days",
+        "status": "Status",
+        "active": "Active",
+        "inactive": "Inactive",
+        "success": "Success!",
+        "error": "Error",
+        "back": "Back"
     }
-}
+} 

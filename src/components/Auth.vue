@@ -55,6 +55,7 @@ import {
   createUserWithEmailAndPassword,
 } from 'firebase/auth';
 import { auth } from '../config/firebase';
+import { createUserProfile } from '../services/userService';
 
 const router = useRouter();
 const { t } = useI18n();
@@ -71,7 +72,8 @@ const handleSubmit = async () => {
     if (isLogin.value) {
       await signInWithEmailAndPassword(auth, email.value, password.value);
     } else {
-      await createUserWithEmailAndPassword(auth, email.value, password.value);
+      const userCredential = await createUserWithEmailAndPassword(auth, email.value, password.value);
+      await createUserProfile(userCredential.user);
     }
     email.value = '';
     password.value = '';

@@ -1,0 +1,43 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Função auxiliar para verificar autenticação
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Função para verificar se o documento pertence ao usuário
+    function isOwner() {
+      return request.auth.uid == resource.data.userId;
+    }
+
+    // Regras para a coleção users
+    match /users/{userId} {
+      allow read: if isAuthenticated() && request.auth.uid == userId;
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      allow update: if isAuthenticated() && request.auth.uid == userId;
+      allow delete: if false; // Não permitir exclusão de perfis de usuário
+    }
+
+    // Regras para produtos
+    match /products/{productId} {
+      allow read: if isAuthenticated() && isOwner();
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isAuthenticated() && isOwner();
+    }
+
+    // Regras para batches de inventário
+    match /inventory_batches/{batchId} {
+      allow read: if isAuthenticated() && isOwner();
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isAuthenticated() && isOwner();
+    }
+
+    // Regras para cálculos
+    match /calculations/{calculationId} {
+      allow read: if isAuthenticated() && request.auth.uid == resource.data.userId;
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if false; // Não permitir atualização ou exclusão de cálculos
+    }
+  }
+}

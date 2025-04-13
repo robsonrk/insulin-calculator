@@ -8,15 +8,15 @@ import ja from './locales/ja.json'
 import './config/firebase'
 import './assets/main.css'
 
+// Configuração do i18n
 const i18n = createI18n({
-  legacy: false,
-  locale: 'pt-BR',
-  fallbackLocale: 'en',
-  messages: {
-    'pt-BR': ptBR,
-    en,
-    ja
-  }
+    locale: 'pt-BR',
+    fallbackLocale: 'en',
+    messages: {
+        'pt-BR': ptBR,
+        'en': en,
+        'ja': ja
+    }
 })
 
 const app = createApp(App)
@@ -25,5 +25,7 @@ const app = createApp(App)
 app.use(router)
 app.use(i18n)
 
-// Montar a aplicação
-app.mount('#app') 
+// Montar a aplicação depois que o router estiver pronto
+router.isReady().then(() => {
+    app.mount('#app')
+}) 

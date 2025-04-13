@@ -1,9 +1,16 @@
 <template>
-  <div class="max-w-md mx-auto">
+  <div class="flex justify-center items-center min-h-full">
     <InsulinCalculator />
   </div>
 </template>
 
-<script setup>
+<script>
 import InsulinCalculator from '../components/InsulinCalculator.vue'
+
+export default {
+  name: 'Home',
+  components: {
+    InsulinCalculator
+  }
+};
 </script> 

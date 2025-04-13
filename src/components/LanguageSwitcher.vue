@@ -52,9 +52,12 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { saveLanguage } from '../utils/language'
+import { saveLanguage } from '../utils/language';
+import { getAuth } from 'firebase/auth';
+import { getUserPreferences, updateUserPreferences } from '../services/userService';
 
 const { locale } = useI18n();
+const auth = getAuth();
 const isOpen = ref(false);
 
 const languages = {
@@ -65,10 +68,25 @@ const languages = {
 
 const currentLocale = computed(() => locale.value);
 
-const switchLanguage = (lang) => {
+const switchLanguage = async (lang) => {
   locale.value = lang;
   saveLanguage(lang);
   isOpen.value = false;
+
+  // Atualizar preferências do usuário
+  if (auth.currentUser) {
+    try {
+      const userPrefs = await getUserPreferences(auth.currentUser);
+      if (userPrefs) {
+        await updateUserPreferences(auth.currentUser, {
+          ...userPrefs,
+          language: lang
+        });
+      }
+    } catch (error) {
+      console.error('Erro ao atualizar idioma nas preferências:', error);
+    }
+  }
 };
 
 // Fechar o dropdown quando clicar fora
@@ -79,8 +97,24 @@ const handleClickOutside = (event) => {
   }
 };
 
+// Carregar idioma das preferências
+const loadLanguageFromPreferences = async () => {
+  if (auth.currentUser) {
+    try {
+      const userPrefs = await getUserPreferences(auth.currentUser);
+      if (userPrefs && userPrefs.language) {
+        locale.value = userPrefs.language;
+        saveLanguage(userPrefs.language);
+      }
+    } catch (error) {
+      console.error('Erro ao carregar idioma das preferências:', error);
+    }
+  }
+};
+
 onMounted(() => {
   document.addEventListener('click', handleClickOutside);
+  loadLanguageFromPreferences();
 });
 
 onUnmounted(() => {
